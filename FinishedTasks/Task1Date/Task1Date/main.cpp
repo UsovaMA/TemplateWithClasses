@@ -1,28 +1,37 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <cmath>
-#include <math.h>
 using namespace std;
-//----------------------------------------------------------------------START OF CLASS DESCRIPTION----------------------------------------------------------------------
+
+void GDate(long JDate, int& year, int& month, int& day) {
+	unsigned long A = (JDate * 4L - 7468865L) / 146097L;
+	A = (JDate > 2299160) ? JDate + 1 + A - (A / 4L) : JDate;
+	long B = A + 1524;
+	long C = (B * 20L - 2442L) / 7305L;
+	long D = (C * 1461L) / 4L;
+	long E = (10000L * (B - D)) / 306001L;
+	day = int(B - D - ((E * 306001L) / 10000L));
+	month = int((E <= 13) ? E - 1 : E - 13);
+	year = int(C - ((month > 2) ? 4716 : 4715));
+}
+
 class Date {
 private:
 	string inputDate;
 	vector<string> splitDate;
 	const string separator = ".";
 	int day, month, year;
-	int days;
+	unsigned long JDate;
 public:
-	Date(string date, string regex);
 	Date(string date);
-	Date();
 	int split(string str, string regex);
-	void show(bool mode);
 	int getDay();
 	int getMonth();
 	int getYear();
 	friend ostream& operator<<(ostream& out, Date& date);
 	friend istream& operator>>(istream& input, Date& date);
+	friend void GDate(long JD, int& y, int& m, int& d);
+
 	bool operator==(const Date& date) {
 		if ((this->day == date.day) && (this->month == date.month) & (this->year == date.year)) return true;
 		else return false;
@@ -32,143 +41,68 @@ public:
 		else return true;
 	}
 	bool operator>(const Date& date) {
-		if (this->days > date.days) return true;
+		if (this->JDate > date.JDate) return true;
 		else return false;
 	}
 	bool operator>=(const Date& date) {
-		if (this->days >= date.days) return true;
+		if (this->JDate >= date.JDate) return true;
 		else return false;
 	}
 	bool operator<(const Date& date) {
-		if (this->days < date.days) return true;
+		if (this->JDate < date.JDate) return true;
 		else return false;
 	}
 	bool operator<=(const Date& date) {
-		if (this->days <= date.days) return true;
+		if (this->JDate <= date.JDate) return true;
 		else return false;
 	}
 	Date operator+(int inputDays) {
-		Date res;
-		res.year = this->year;
-		res.month = this->month;
-		res.day = this->day;
-		while (inputDays != 0) {
-			inputDays--;
-			if ((month == 1) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10)) {
-				if (res.day == 31) {
-					res.month++;
-					res.day = 1;
-				}
-				else
-				{
-					res.day++;
-				}
-			}
-			if (month == 4 || month == 6 || month == 9 || month == 11) {
-				if (res.day == 30) {
-					res.month++;
-					res.day = 1;
-				}
-				else
-				{
-					res.day++;
-				}
-			}
-			if (month == 2) {
-				if (res.day == 28) {
-					res.month++;
-					res.day = 1;
-				}
-				else
-				{
-					res.day++;
-				}
-			}
-			if (month == 12) {
-				if (res.day == 31) {
-					res.year++;
-					res.month = 1;
-					res.day = 1;
-				}
-				else
-				{
-					res.day++;
-				}
-			}
-		}
-		return res;
+		GDate(this->JDate + inputDays, this->year, this->month, this->day);
+		return *this;
 	}
 	Date operator-(int inputDays) {
-		Date res;
-		//res.year = abs(this->year - date.year) % 60;
-		//res.month = abs(this->month - date.month - (abs(this->year - date.year) / 60) % 60);
-		//res.day = abs(this->day - date.day - (abs(this->month - date.month - (abs(this->year - date.year) / 60)) / 60) % 24);
-		return res;
+		GDate(this->JDate - inputDays, this->year, this->month, this->day);
+		return *this;
 	}
-	Date& operator= (const Date& date) {
+	Date& operator=(const Date& date) {
 		this->year = date.year;
 		this->month = date.month;
 		this->day = date.day;
 		return *this;
 	}
 };
-//----------------------------------------------------------------------END OF CLASS DESCRIPTION----------------------------------------------------------------------
 
-//-----------------------------------------------------------------------START OF CLASS METHODS-----------------------------------------------------------------------
 ostream& operator<<(ostream& out, Date& date) {
 	return out << date.getDay() << '.' << date.getMonth() << '.' << date.getYear() << endl;
 }
 istream& operator>>(istream& input, Date& date) {
 	return input >> date.inputDate;
 }
-//Constructor of class with specified regex
-Date::Date(string date, string regex) {
-	if (split(date, regex) == 3) {
-		day = stoi(splitDate[0]);
-		month = stoi(splitDate[1]);
-		year = stoi(splitDate[2]);
-		if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
-			days = day + month * 31 + year * 365;
-		}
-		if (month == 4 || month == 6 || month == 9 || month == 11) {
-			days = day + month * 30 + year * 365;
-		}
-		if (month == 2) {
-			days = day + month * 28 + year * 365;
-		}
-	}
-	else {
-		cout << "Incorrect date" << endl;
-		exit(EXIT_FAILURE);
-	}
 
-}
-//Constructor of class with default regex (":")
 Date::Date(string date) {
 	if (split(date, separator) == 3) {
 		day = stoi(splitDate[0]);
 		month = stoi(splitDate[1]);
 		year = stoi(splitDate[2]);
-		if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
-			days = day + month * 31 + year * 365;
-		}
-		if (month == 4 || month == 6 || month == 9 || month == 11) {
-			days = day + month * 30 + year * 365;
-		}
-		if (month == 2) {
-			days = day + month * 28 + year * 365;
-		}
+		if (month <= 2) {
+			year--;
+			month += 12;
+		};
+		int A = year / 100;
+		A = 2 - A + (A / 4);
+		JDate = 1461L * long(year);
+		JDate /= 4L;
+		unsigned long K = 306001L * long(month + 1);
+		K /= 10000L;
+		JDate += K + day + 1720995L + A;
 	}
 	else {
-		cout << "Incorrect date" << endl;
+		cout << "Дата введена неправильно!" << endl;
 		exit(EXIT_FAILURE);
 	}
 
 }
-Date::Date() {
 
-}
-//Split method for splitting input on elements
 int Date::split(string str, string regex) {
 	vector<string> res;
 	int count = 0;
@@ -183,9 +117,6 @@ int Date::split(string str, string regex) {
 	Date::splitDate = res;
 	return count;
 }
-void Date::show(bool mode) {
-	cout << Date::days << endl;
-}
 int Date::getDay() {
 	return Date::day;
 }
@@ -195,29 +126,36 @@ int Date::getMonth() {
 int Date::getYear() {
 	return Date::year;
 }
-//----------------------------------------------------------------------END OF CLASS METHODS----------------------------------------------------------------------
 
 int main() {
+	setlocale(LC_ALL, "Russian");
+
 	string DATE1;
 	string DATE2;
-	int testDays;
-	cout << "enter Date" << endl;
+	int countDays;
+
+	cout << "Введите первую дату(ДЕНЬ.МЕСЯЦ.ГОД):" << endl;
 	cin >> DATE1;
+	cout << "Введите вторую дату(ДЕНЬ.МЕСЯЦ.ГОД):" << endl;
 	cin >> DATE2;
-	cin >> testDays;
+	cout << "Введите количество дней, которые хотите добавить/сложить с первой датой:" << endl;
+	cin >> countDays;
+
 	Date test1(DATE1);
 	Date test2(DATE2);
-	Date resM = test1 - testDays;
-	Date resP = test1 + testDays;
+
+	Date resMinus = test1 - countDays;
+	Date resPlus = test1 + countDays;
+	cout << "Результат вычитания: " << resMinus << endl;
+	cout << "Результат вычитания: " << resPlus << endl;
+
 	if (test1 == test2)
 	{
-		cout << "Yes" << endl;
+		cout << "Даты равны" << endl;
 	}
 	else
 	{
-		cout << "No" << endl;
+		cout << "Даты не равны" << endl;
 	}
-
-	test1.show(true);
-	cout << resP;
+	return 0;
 }
