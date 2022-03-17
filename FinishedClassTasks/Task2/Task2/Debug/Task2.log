@@ -1,22 +1,19 @@
 ﻿  main.cpp
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(152,44): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(162,36): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(170,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(171,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(172,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(174,44): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(188,37): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(199,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(200,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(201,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(203,37): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(225,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(226,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(227,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(243,44): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(257,36): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(269,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(270,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(271,30): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(273,44): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(102,11): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(103,16): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(106,19): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(109,16): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(113,15): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(125,24): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(134,15): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(142,24): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(150,12): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(151,12): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(152,12): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(155,19): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(166,19): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(167,24): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(180,17): warning C4101: P: неиспользованная локальная переменная
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(180,11): warning C4101: p: неиспользованная локальная переменная
+C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Task2\main.cpp(180,14): warning C4101: S: неиспользованная локальная переменная
   Task2.vcxproj -> C:\Users\mrhin\Desktop\Лобач\Инфа ЛАБЫ\TemplateWithClasses\FinishedClassTasks\Task2\Debug\Task2.exe
