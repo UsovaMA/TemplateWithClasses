@@ -1,0 +1,17 @@
+# GitHub Action that enables a repo to achieve gradual compliance with cpplint by
+#     linting only those files that have been added or modified (vs. origin/master).
+# 1. runs cpplint only on those files that have been modified vs. origin/master.
+# 2. compiles with g++ only those files that have been modified vs. origin/master.
+# 3. other optional filepath verifications may be commented out at the end of this file.
+# From: https://github.com/cpplint/GitHub-Action-for-cpplint
+
+name: cpplint
+on: [push, pull_request]
+jobs:
+  cpplint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+    - run: pip install cpplint
+    - run: cpplint --recursive .
