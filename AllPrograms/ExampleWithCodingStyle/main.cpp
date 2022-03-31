@@ -1,7 +1,5 @@
-// Copyright 2022 Marina Usova
-
-#include <iostream>
 #include "Class.h"
+#include <iostream>
 
 int main() {
   Point x;
@@ -10,6 +8,6 @@ int main() {
   int a, b;
   a = 5;
   b = 7;
-  int sum = a + b;
-  system("pause");
-}
+  int sum= a + b;
+  system("pause"); 
+};
