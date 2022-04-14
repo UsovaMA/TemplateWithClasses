@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2019
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TemplateWithClasses", "TemplateWithClasses\TemplateWithClasses.vcxproj", "{8D4B6A5F-B6E7-4DC6-8BDF-137CEA1E34A0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExampleWithCodingStyle", "ExampleWithCodingStyle\ExampleWithCodingStyle.vcxproj", "{92BC94AA-451C-4CD7-9A17-0BA2F179A7AF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TemplateWithIheritence", "TemplateWithIheritence\TemplateWithIheritence.vcxproj", "{01F1F50B-1C05-49FB-8EC5-48A178B33323}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{92BC94AA-451C-4CD7-9A17-0BA2F179A7AF}.Release|x64.Build.0 = Release|x64
 		{92BC94AA-451C-4CD7-9A17-0BA2F179A7AF}.Release|x86.ActiveCfg = Release|Win32
 		{92BC94AA-451C-4CD7-9A17-0BA2F179A7AF}.Release|x86.Build.0 = Release|Win32
+		{01F1F50B-1C05-49FB-8EC5-48A178B33323}.Debug|x64.ActiveCfg = Debug|x64
+		{01F1F50B-1C05-49FB-8EC5-48A178B33323}.Debug|x64.Build.0 = Debug|x64
+		{01F1F50B-1C05-49FB-8EC5-48A178B33323}.Debug|x86.ActiveCfg = Debug|Win32
+		{01F1F50B-1C05-49FB-8EC5-48A178B33323}.Debug|x86.Build.0 = Debug|Win32
+		{01F1F50B-1C05-49FB-8EC5-48A178B33323}.Release|x64.ActiveCfg = Release|x64
+		{01F1F50B-1C05-49FB-8EC5-48A178B33323}.Release|x64.Build.0 = Release|x64
+		{01F1F50B-1C05-49FB-8EC5-48A178B33323}.Release|x86.ActiveCfg = Release|Win32
+		{01F1F50B-1C05-49FB-8EC5-48A178B33323}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
