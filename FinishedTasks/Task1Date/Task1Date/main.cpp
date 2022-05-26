@@ -25,20 +25,17 @@ private:
 public:
 	Date(string date);
 	int split(string str, string regex);
-	int getDay();
-	int getMonth();
-	int getYear();
 	friend ostream& operator<<(ostream& out, Date& date);
 	friend istream& operator>>(istream& input, Date& date);
 	friend void GDate(long JD, int& y, int& m, int& d);
 
 	bool operator==(const Date& date) {
-		if ((this->day == date.day) && (this->month == date.month) & (this->year == date.year)) return true;
+		if (this->JDate == date.JDate) return true;
 		else return false;
 	}
 	bool operator!=(const Date& date) {
-		if ((this->day == date.day) && (this->month == date.month) & (this->year == date.year)) return false;
-		else return true;
+		if (this->JDate != date.JDate) return true;
+		else return false;
 	}
 	bool operator>(const Date& date) {
 		if (this->JDate > date.JDate) return true;
@@ -73,7 +70,7 @@ public:
 };
 
 ostream& operator<<(ostream& out, Date& date) {
-	return out << date.getDay() << '.' << date.getMonth() << '.' << date.getYear() << endl;
+	return out << date.day << '.' << date.month << '.' << date.year << endl;
 }
 istream& operator>>(istream& input, Date& date) {
 	return input >> date.inputDate;
@@ -117,15 +114,6 @@ int Date::split(string str, string regex) {
 	Date::splitDate = res;
 	return count;
 }
-int Date::getDay() {
-	return Date::day;
-}
-int Date::getMonth() {
-	return Date::month;
-}
-int Date::getYear() {
-	return Date::year;
-}
 
 int main() {
 	setlocale(LC_ALL, "Russian");
@@ -138,7 +126,7 @@ int main() {
 	cin >> DATE1;
 	cout << "Введите вторую дату(ДЕНЬ.МЕСЯЦ.ГОД):" << endl;
 	cin >> DATE2;
-	cout << "Введите количество дней, которые хотите добавить/сложить с первой датой:" << endl;
+	cout << "Введите количество дней, которые хотите вычесть/сложить с первой датой:" << endl;
 	cin >> countDays;
 
 	Date test1(DATE1);
@@ -147,7 +135,7 @@ int main() {
 	Date resMinus = test1 - countDays;
 	Date resPlus = test1 + countDays;
 	cout << "Результат вычитания: " << resMinus << endl;
-	cout << "Результат вычитания: " << resPlus << endl;
+	cout << "Результат сложения: " << resPlus << endl;
 
 	if (test1 == test2)
 	{
