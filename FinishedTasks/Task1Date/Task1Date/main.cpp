@@ -30,28 +30,22 @@ public:
 	friend void GDate(long JD, int& y, int& m, int& d);
 
 	bool operator==(const Date& date) {
-		if (this->JDate == date.JDate) return true;
-		else return false;
+		return (this->JDate == date.JDate);
 	}
 	bool operator!=(const Date& date) {
-		if (this->JDate != date.JDate) return true;
-		else return false;
+		return (this->JDate != date.JDate);
 	}
 	bool operator>(const Date& date) {
-		if (this->JDate > date.JDate) return true;
-		else return false;
+		return (this->JDate > date.JDate);
 	}
 	bool operator>=(const Date& date) {
-		if (this->JDate >= date.JDate) return true;
-		else return false;
+		return (this->JDate >= date.JDate);
 	}
 	bool operator<(const Date& date) {
-		if (this->JDate < date.JDate) return true;
-		else return false;
+		return (this->JDate < date.JDate);
 	}
 	bool operator<=(const Date& date) {
-		if (this->JDate <= date.JDate) return true;
-		else return false;
+		return (this->JDate <= date.JDate);
 	}
 	Date operator+(int inputDays) {
 		GDate(this->JDate + inputDays, this->year, this->month, this->day);

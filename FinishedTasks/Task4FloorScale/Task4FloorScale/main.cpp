@@ -125,9 +125,10 @@ public:
 	void startDate();
 	void addObservation();
 	void findWeight();
-	void MinWeightMonth();
-	void MaxWeightMonth();
-	void MidWeightMonth();
+	void MinWeight(int var);
+	void MaxWeight(int var);
+	void MidWeight(int var);
+	void addInf();
 };
 
 FloorScales::FloorScales() {
@@ -136,6 +137,17 @@ FloorScales::FloorScales() {
 
 FloorScales::~FloorScales() {
 
+}
+
+void FloorScales::addInf() {
+	cout << "¬ведите им€: ";
+	cin >> name;
+	cout << "¬ведите день: ";
+	cin >> day;
+	cout << "¬ведите мес€ц: ";
+	cin >> month;
+	cout << "¬ведите год: ";
+	cin >> year;
 }
 
 void FloorScales::startDate() {
@@ -148,30 +160,26 @@ void FloorScales::addObservation() {
 	Observation temp;
 	bool flag = true;
 
-	cout << "¬ведите им€ наблюдаемого: ";
-	cin >> this->name;
-	cout << "¬ведите день записи: ";
-	cin >> this->day;
-	cout << "¬ведите мес€ц записи: ";
-	cin >> this->month;
-	cout << "¬ведите год записи: ";
-	cin >> this->year;
+	addInf();
 
-	observation.setName(this->name);
+	observation.setName(name);
 
-	for (int i = 0; i <= observations.size(); i++) {
+	for (int i = 0; i < observations.size(); i++) {
 		temp = observations.at(i);
-		if (temp.getName() == name || temp.getDay() == day || temp.getMonth() == month || temp.getYear() == year) {
-			temp.randKg();
-			temp.randGr();
-			cout << "¬аш новый вес: " << temp.getKg() << "кг " << temp.getGr() << "гр" << endl;
-			flag = false;
-		}
+		if (temp.getName() == name)
+			if (temp.getDay() == day)
+				if (temp.getMonth() == month)
+					if (temp.getYear() == year) {
+						temp.randKg();
+						temp.randGr();
+						cout << "¬аш новый вес: " << temp.getKg() << "кг " << temp.getGr() << "гр" << endl;
+						flag = false;
+					}
 	}
 	if (flag) {
-		observation.setDay(this->day);
-		observation.setMonth(this->month);
-		observation.setYear(this->year);
+		observation.setDay(day);
+		observation.setMonth(month);
+		observation.setYear(year);
 		observation.randKg();
 		observation.randGr();
 		cout << "¬аш вес: " << observation.getKg() << "кг " << observation.getGr() << "гр" << endl;
@@ -180,20 +188,60 @@ void FloorScales::addObservation() {
 }
 
 void FloorScales::findWeight() {
-	cout << "¬ведите им€: ";
-	cin >> this->name;
+	Observation temp;
+	bool flag = true;
+
+	addInf();
+
+	for (int i = 0; i < observations.size(); i++) {
+		temp = observations.at(i);
+		if (temp.getName() == name)
+			if (temp.getDay() == day)
+				if(temp.getMonth() == month)
+					if (temp.getYear() == year) {
+						cout << "Ќа введенную дату ваш вес сотсавл€л: " << temp.getKg() << "кг " << temp.getGr() << "гр" << endl;
+						flag = false;
+					}
+	}
+	if (flag) {
+		cout << "Ќа введенную дату нет показаний!" << endl;
+	}
 }
 
-void FloorScales::MinWeightMonth() {
+void FloorScales::MinWeight(int var) {
+	if (var == 1) {
 
+	}
+	else if (var == 2) {
+
+	}
+	else {
+
+	}
 }
 
-void FloorScales::MidWeightMonth() {
+void FloorScales::MidWeight(int var) {
+	if (var == 1) {
 
+	}
+	else if (var == 2) {
+
+	}
+	else {
+
+	}
 }
 
-void FloorScales::MaxWeightMonth() {
+void FloorScales::MaxWeight(int var) {
+	if (var == 1) {
 
+	}
+	else if (var == 2) {
+
+	}
+	else {
+
+	}
 }
 
 
@@ -203,6 +251,10 @@ int main() {
 	setlocale(LC_ALL, "Russian");
 	srand(time(0));
 
+	FloorScales s = FloorScales();
+	s.startDate();
+	s.addObservation();
+	s.findWeight();
 
 	return 0;
 }

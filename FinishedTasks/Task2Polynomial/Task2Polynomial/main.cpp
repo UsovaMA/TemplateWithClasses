@@ -102,7 +102,7 @@ void Polynom::valuePolynom(double x) {
     for (int i = 0; i <= deg; i++)
         result += pow(x, i) * koef[i];
 
-    cout << "Значение полинома в точке " << x << " = " << result;
+    cout << "Значение полинома в точке " << x << " = " << result << endl;
 }
 
 void Polynom::nextPolynom() {
@@ -115,7 +115,7 @@ void Polynom::nextPolynom() {
         j += 1;
     }
     cout << "\n" << "Производная от исходного полинома = ";
-    cout << result->OutputPolynom();
+    cout << result->OutputPolynom() << endl;
 }
 
 void Polynom::InputPolynom() {
@@ -131,7 +131,7 @@ void Polynom::InputPolynom() {
         cout << "Коэффициент" << deg << " = ";
         cin >> koef[deg];
         if (koef[deg] == 0)
-            cout << "Коэффициент" << deg << " не должен быть 0!!!\n";
+            cout << "Коэффициент" << deg << " не должен быть 0!!!" << endl;;
     } while (!koef[deg]);
 }
 
@@ -198,6 +198,7 @@ string Polynom::OutputPolynom() {
         strok += to_string(prom);
         strok += "\n";
     }
+    if (koef[0] == 0) strok = "0";
     return strok;
 }
 
@@ -231,19 +232,18 @@ void Polynom::OutputPolynom(){
 
 */
 
-/*
-ofstream& operator<<(ofstream& out, const Polynom& polynom) {
-   
+
+ofstream& operator<<(ofstream& out, Polynom& polynom) {
+    string s = polynom.OutputPolynom();
+    out << s;
+
     return out;
 }
-
 
 ifstream& operator>>(ifstream& input, Polynom& polynom) {
     
     return input;
 }
-*/
-
 
 int main() {
     setlocale(LC_ALL, "Russian");
@@ -262,7 +262,7 @@ int main() {
     a2 = a1;
     cout << a2.OutputPolynom();
     a3 = a1 + a2;
-    cout << a3.OutputPolynom();
+    cout << a3.OutputPolynom() << endl;
 
     a3.valuePolynom(2.5);
 
@@ -273,9 +273,7 @@ int main() {
     ofstream fileOut;
     fileOut.open("file.TXT");
 
-    string f = a3.OutputPolynom();
-
-    fileOut << f;
+    fileOut << a3;
 
 
     fileIn.close();
